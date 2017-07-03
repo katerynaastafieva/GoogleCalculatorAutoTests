@@ -1,15 +1,12 @@
 Meta:
 
-Narrative:
-As a user
-I want to perform an action
-So that I can achieve a business goal
+@keyboard
 
 Scenario: GCK-4 Division of two numbers using keyboard positive scenario
 
-Given open google page with calculator on it for keyboard test
+Given open google page with calculator on it
 When divide <num1> by <num2> using keyboard
-Then shown a valid <result> for keyboard test
+Then shown a valid <result>
 
 Examples:
 |num1|num2|result|

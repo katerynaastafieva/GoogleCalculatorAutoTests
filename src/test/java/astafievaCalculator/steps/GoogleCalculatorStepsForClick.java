@@ -19,21 +19,19 @@ import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver
 /**
  * Created by Kateryna_Astafieva on 6/29/2017.
  */
-public class GoogleCalculatorStepsForClick {
+public class GoogleCalculatorStepsForClick extends CommonSteps
+{
 
     GoogleCalculatorPage googleCalculatorPage;
 
     public void stepsFofClickTests(String num2){
         googleCalculatorPage.clickOnButtonByNumber(num2);
         googleCalculatorPage.evaluateExpression();
-        String actualResultClick = googleCalculatorPage
+        String actualNumberResult = googleCalculatorPage
                 .getResultValueField()
                 .getText();
-        Serenity.setSessionVariable("actualNumberResultClick").to(actualResultClick);
+        Serenity.setSessionVariable("actualNumberResult").to(actualNumberResult);
     }
-
-    @Step
-    public void open_google_calculator_page_for_click_tests(){googleCalculatorPage.open();}
 
     @Step
     public void add_two_numbers_using_the_mouse(String num1, String num2){
@@ -60,11 +58,6 @@ public class GoogleCalculatorStepsForClick {
         googleCalculatorPage.clickOnButtonByNumber(num1);
         googleCalculatorPage.clickOnActionButton("÷");
         stepsFofClickTests(num2);
-    }
-
-    @Step
-    public void check_that_result_is_valid(String expectedResult, String actualResult){
-        Assert.assertEquals(expectedResult, actualResult);
     }
 
 

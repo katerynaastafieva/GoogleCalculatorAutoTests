@@ -12,13 +12,10 @@ import org.jbehave.core.annotations.When;
  * Created by Kateryna_Astafieva on 6/29/2017.
  */
 
-public class GoogleCalculatorDefinitionStepsForClick {
+public class GoogleCalculatorDefinitionStepsForClick extends CommonDefinitionSteps{
 
     @Steps
     GoogleCalculatorStepsForClick googleCalculatorStepsForClick;
-
-    @Given("open google page with calculator on it for click test")
-    public void givenOpenGoogleForClickTests(){googleCalculatorStepsForClick.open_google_calculator_page_for_click_tests();}
 
     @When("add $num1 and $num2 using mouse")
     public void whenAddTwoNumbersUsingTheMouse(String num1, String num2){googleCalculatorStepsForClick.add_two_numbers_using_the_mouse(num1,num2);}
@@ -35,7 +32,4 @@ public class GoogleCalculatorDefinitionStepsForClick {
     @When("divide $num by $zero using mouse")
     public void whenDivideByZeroUsingTheMouse(String num1, String num2){googleCalculatorStepsForClick.divide_two_numbers_using_the_mouse(num1,num2);}
 
-    @Then("shown a valid $result for click test")
-    public void thenResultIsEqualToExpectedUsingTheMouse(String expectedResult){
-        googleCalculatorStepsForClick.check_that_result_is_valid(Serenity.sessionVariableCalled("actualNumberResultClick"),expectedResult);}
 }

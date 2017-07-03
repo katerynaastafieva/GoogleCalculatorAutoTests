@@ -9,20 +9,15 @@ import org.junit.Assert;
 /**
  * Created by Kateryna_Astafieva on 7/1/2017.
  */
-public class GoogleCalculatorStepsForKeyboardInput {
+public class GoogleCalculatorStepsForKeyboardInput extends CommonSteps{
 
     GoogleCalculatorPage googleCalculatorPage;
 
     public void stepsForKeyboardInputTests() {
-        String actualNumberResultKeyboardInput = googleCalculatorPage
+        String actualNumberResult = googleCalculatorPage
                 .getResultValueField()
                 .getText();
-        Serenity.setSessionVariable("actualNumberResultKeyboardInput").to(actualNumberResultKeyboardInput);
-    }
-
-    @Step
-    public void open_google_calculator_page_for_keyboard_input_tests() {
-        googleCalculatorPage.open();
+        Serenity.setSessionVariable("actualNumberResult").to(actualNumberResult);
     }
 
     @Step
@@ -53,8 +48,4 @@ public class GoogleCalculatorStepsForKeyboardInput {
         stepsForKeyboardInputTests();
     }
 
-    @Step
-    public void check_that_result_is_valid_for_keyboard_tests(String expectedResult, String actualResult) {
-        Assert.assertEquals(expectedResult, actualResult);
-    }
 }

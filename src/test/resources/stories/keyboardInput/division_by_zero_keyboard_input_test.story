@@ -1,15 +1,12 @@
 Meta:
 
-Narrative:
-As a user
-I want to perform an action
-So that I can achieve a business goal
+@keyboard
 
 Scenario: GCK-5 Division by zero using keyboard scenario
 
-Given open google page with calculator on it for keyboard test
+Given open google page with calculator on it
 When divide <num> by <zero> using keyboard
-Then shown a valid <result> for keyboard test
+Then shown a valid <result>
 
 Examples:
 |num |zero|result    |

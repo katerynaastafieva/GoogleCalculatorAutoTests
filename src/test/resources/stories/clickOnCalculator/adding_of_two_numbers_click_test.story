@@ -1,15 +1,12 @@
 Meta:
 
-Narrative:
-As a user
-I want to perform an action
-So that I can achieve a business goal
+@mouse
 
 Scenario: GCC-1 Adding of two numbers using mouse positive scenario
 
-Given open google page with calculator on it for click test
+Given open google page with calculator on it
 When add <num1> and <num2> using mouse
-Then shown a valid <result> for click test
+Then shown a valid <result>
 
 Examples:
 |num1|num2|result|

@@ -1,15 +1,12 @@
 Meta:
 
-Narrative:
-As a user
-I want to perform an action
-So that I can achieve a business goal
+@keyboard
 
 Scenario: GCK-3 Multiplication of two numbers using keyboard positive scenario
 
-Given open google page with calculator on it for keyboard test
+Given open google page with calculator on it
 When multiply <num1> and <num2> using keyboard
-Then shown a valid <result> for keyboard test
+Then shown a valid <result>
 
 Examples:
 |num1|num2|result|
